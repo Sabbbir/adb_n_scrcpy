@@ -1,0 +1,6 @@
+#SCRCPY totally wireless
+
+adb start-server
+adb tcpip 6969
+adb connect [ip]:6969
+scrcpy

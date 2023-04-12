@@ -1,0 +1,49 @@
+#connecting wirelessly
+
+#With cable
+adb tcpip [port_no]
+#After disconnecting the cable
+adb connect IP:[port_no]
+
+#Download file from phone to pc
+adb pull "source(phone)" "destination(pc)"
+
+#upload file from pc to phone
+adb push "source(pc)" "destination(phone)"
+
+#input text from pc
+adb shel input text "text"
+
+#Enter shell 
+adb shell
+>pm uninstall -k --user 0 {package_name}
+>whoami
+
+#List packages installed on the device
+adb shell pm list packages
+
+#Ghost screen swipe
+adb shell input touchscreen swipe 500 500 500 1000 2000(milisec)
+
+#Volume button longpress changes track
+sudo adb shell pm grant com.mxtech.videoplayer android.permission.SET_VOLUME_KEY_LONG_PRESS_LISTENER 
+
+#Lock smartphone
+adb shell input keyevent 26
+
+#Unlock smartphone
+adb shell input keyevent 82
+
+#Screenshot
+adb exec-out screencap -p > lol.png
+
+#Screenrecord
+adb shell screenrecord lol.mp4
+
+#Input
+adb shell input tap 500 1100
+adb shell input text "lol"
+
+#Backbutton
+adb shell input keyevent 4
+

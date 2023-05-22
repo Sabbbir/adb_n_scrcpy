@@ -1,6 +1,9 @@
 #SCRCPY totally wireless
+#First turn wireless debugging Mode
 
 adb start-server
-adb tcpip 6969
-adb connect [ip]:6969
+adb connect [ip{from wireless debugging mode}]:port
+#Ex: adb connect 192.168.10.69:42069
+#You can change the port number afterwards using
+#adb tcpip 6969
 scrcpy
